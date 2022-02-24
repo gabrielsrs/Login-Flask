@@ -1,9 +1,9 @@
-import pymysql
 import bcrypt
+import pymysql
+from datetime import datetime
 
 
 class Mysql:
-
     connection = pymysql.connect(host="localhost",
                                  user="root", password="",
                                  db="cadastro",
@@ -35,7 +35,8 @@ class Mysql:
                 else:
                     login_password = 0
 
-            except:
+            except Exception as error:
+                log(error, self.user)
                 login_password = 0
 
         return True if user_res and login_password else False
@@ -62,3 +63,8 @@ class Mysql:
             cursor.execute(f"select user from login where email = '{self.email}' or user = '{self.user}';")
             get_user_name = cursor.fetchone()
             return get_user_name
+
+
+def log(err, user):
+    with open("database/log_db.txt", "a") as execute:
+        execute.write(f"{datetime.now()}, {err}, {user} \n")
