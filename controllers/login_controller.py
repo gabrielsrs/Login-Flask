@@ -1,6 +1,10 @@
 from flask import render_template, request, redirect, url_for, flash, session
 from services.login_service import LoginService
-
+from flask_login import (
+    UserMixin,
+    login_user,
+    
+)
 
 def login_controller():
     if request.method == "POST":
