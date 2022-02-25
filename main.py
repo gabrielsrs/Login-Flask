@@ -23,8 +23,6 @@ def login():
             # Use sessions for validate the access to home
             if request.form.get('remember') == "remember":
                 session.permanent = True
-            else:
-                session.permanent = False
 
             session["username"] = info_users.get_user_name()[0]
 
