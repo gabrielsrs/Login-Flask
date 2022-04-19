@@ -60,3 +60,30 @@
 2022-01-30 03:37:25.508537, 'NoneType' object is not subscriptable, None 
 2022-01-30 03:37:25.514521, 'NoneType' object is not subscriptable, None 
 2022-01-30 03:37:25.520505, 'NoneType' object is not subscriptable, None 
+2022-04-18 21:18:20.978846, (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/14/e3q8), GaRRez 
+2022-04-18 21:18:31.183155, (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/14/e3q8), GaRRez 
+2022-04-18 21:18:48.859540, (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/14/e3q8), GaRRez 
+2022-04-18 21:33:08.678499, module 'bcrypt' has no attribute 'checkpw', GaRRez 
+2022-04-18 21:33:19.760673, module 'bcrypt' has no attribute 'checkpw', GaRRez 
+2022-04-18 21:33:33.526271, module 'bcrypt' has no attribute 'checkpw', GaRRez
+2022-04-18 21:35:17.784506, module 'bcrypt' has no attribute 'checkpw', GaRRez 
+2022-04-18 21:55:30.376407, module 'bcrypt' has no attribute 'checkpw', GaRRez 
+2022-04-18 21:59:35.867136, module 'bcrypt' has no attribute 'checkpw', GaRRez 
+2022-04-18 22:01:02.964334, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:01:13.017782, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:04:35.641872, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:11:55.182610, module 'bcrypt' has no attribute 'checkpw', GaRRez 
+2022-04-18 22:25:30.079930, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:31:40.969665, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:32:28.837446, Unicode-objects must be encoded before checking, G123R 
+2022-04-18 22:38:37.057047, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:39:22.503679, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:40:08.056693, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:42:08.429756, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:42:56.090963, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:48:35.762378, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:49:53.625827, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 22:50:24.200640, Unicode-objects must be encoded before checking, GaRRez 

@@ -12,4 +12,4 @@ class Config:
     SERVER = getenv('SERVER')
     PORT = getenv('PORT')
     DAYS = getenv('DAYS')
-
+    SQLALCHEMY_DB = getenv("SQLALCHEMY_DB")

@@ -1,4 +1,6 @@
-from database.db import Mysql
+from database.db import User
+from app import db
+from services.pass_code import encrypt
 
 
 class RegisterService:
@@ -8,6 +10,13 @@ class RegisterService:
         self.password = password
 
     def register(self):
-        info_users = Mysql(email=self.email, user=self.user, password=self.password)
+        user_validation = User.query.filter_by(name=self.user).first() or \
+                          User.query.filter_by(email=self.user).first()
 
-        return info_users
+        if not user_validation:
+            add_user = User(name=self.user, email=self.email, password=encrypt(self.password))
+            db.session.add(add_user)
+            db.session.commit()
+            return True
+
+        return False

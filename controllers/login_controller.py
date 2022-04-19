@@ -1,10 +1,6 @@
 from flask import render_template, request, redirect, url_for, flash, session
 from services.login_service import LoginService
-from flask_login import (
-    UserMixin,
-    login_user,
-    
-)
+
 
 def login_controller():
     if request.method == "POST":
@@ -12,16 +8,17 @@ def login_controller():
         password = request.form.get("password")
 
         data_users = LoginService(user, password)
-        info_users = data_users.login()
 
-        if info_users.conf_login():
+        if data_users.login():
             # Use sessions for validate the access to home
-            if request.form.get('remember') == "remember":
-                session.permanent = True
-            else:
-                session.permanent = False
+            remember = request.form.get('remember') == "remember"
 
-            session["username"] = info_users.get_user_name()[0]
+            if remember:
+                session.permanent = True
+
+            session.permanent = False
+
+            session["username"] = data_users.get_user_name()
 
             return redirect(url_for("route.home"))
 
