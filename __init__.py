@@ -11,5 +11,5 @@ if __name__ == '__main__':
     app.run(
         debug=bool(app.config["FLASK_DEBUG"]),
         host=str(app.config["SERVER"]),
-        port=app.config["PORT"]
+        port=app.config["PORT"],
     )

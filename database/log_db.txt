@@ -87,3 +87,56 @@
 2022-04-18 22:48:35.762378, Unicode-objects must be encoded before checking, GaRRez 
 2022-04-18 22:49:53.625827, Unicode-objects must be encoded before checking, GaRRez 
 2022-04-18 22:50:24.200640, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 23:22:05.255956, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 23:25:34.646307, module 'bcrypt._bcrypt' has no attribute 'ffi', GaRRez 
+2022-04-18 23:26:12.686883, Unicode-objects must be encoded before checking, GaRRez 
+2022-04-18 23:26:44.418344, module 'bcrypt._bcrypt' has no attribute 'ffi', GaRRez 
+2022-04-18 23:31:51.423711, module 'bcrypt._bcrypt' has no attribute 'ffi', GaRRez 
+2022-04-18 23:32:33.408307, module 'bcrypt._bcrypt' has no attribute 'ffi', GaRRez 
+2022-04-18 23:33:29.992715, module 'bcrypt._bcrypt' has no attribute 'ffi', GaRRez 
+2022-04-18 23:36:12.639848, module 'bcrypt._bcrypt' has no attribute 'ffi', GaRRez 
+2022-08-06 13:41:21.777951, (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('GaRRez', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8), GaRRez 
+2022-08-06 13:41:33.470440, (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('GaRRez', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8), GaRRez 
+2022-08-06 13:41:45.578798, (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('GaRRez', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8), GaRRez 
+2022-08-06 13:41:49.574854, (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('GaRRez', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8), GaRRez 
+2022-08-06 13:43:26.955179, (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.name AS user_name, user.email AS user_email, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('GaRRez', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8), GaRRez 
+2022-08-06 13:45:59.885385, 'NoneType' object has no attribute 'drivername', GaRRez 
+2022-08-06 13:46:13.294625, 'NoneType' object has no attribute 'drivername', GaRRez 
+2022-08-06 13:46:33.936252, 'NoneType' object has no attribute 'drivername', GaRRez 
+2022-08-06 13:48:17.211025, 'NoneType' object has no attribute 'drivername', GaRRez 
+2022-08-06 13:48:55.199008, 'NoneType' object has no attribute 'drivername', GaRRez 
+2022-08-06 13:49:06.351146, 'NoneType' object has no attribute 'drivername', GaRRez 
+2022-08-07 02:38:10.421209, 'NoneType' object has no attribute 'drivername', GaRRez 
+2022-08-07 02:38:16.108353, 'NoneType' object has no attribute 'drivername', GaRRez 
+2022-08-07 02:38:52.958689, 'NoneType' object has no attribute 'drivername', GaRRez 
+2022-08-07 02:39:04.195640, 'NoneType' object has no attribute 'drivername', GaRReiz 

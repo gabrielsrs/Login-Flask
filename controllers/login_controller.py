@@ -1,5 +1,7 @@
 from flask import render_template, request, redirect, url_for, flash, session
 from services.login_service import LoginService
+from flask_login import login_user
+from database.db import User
 
 
 def login_controller():
@@ -10,7 +12,10 @@ def login_controller():
         data_users = LoginService(user, password)
 
         if data_users.login():
+            user_object = User.query.filter_by(name=user).first()
+            login_user(user_object)
             # Use sessions for validate the access to home
+
             remember = request.form.get('remember') == "remember"
 
             if remember:

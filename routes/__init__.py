@@ -23,13 +23,14 @@ def login():
 def home():
     if "username" in session:
         flash("message_home", session["username"])
-        return render_template("home.html")
 
-    return redirect(url_for("login.html"))
+        return render_template("home.html")
+    return redirect(url_for("route.login"))
 
 
 @handle.route("/logout")
 def logout():
+
     return logout_controller()
 
 
