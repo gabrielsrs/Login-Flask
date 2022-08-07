@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 #database
-.log_db.txt
-.database.db
+log_db.txt
+database.db
