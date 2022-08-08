@@ -39,5 +39,5 @@ class LoginService:
 
 
 def log(err, user):
-    with open("database/log_db.txt", "a") as execute:
+    with open("database/db.log", "a") as execute:
         execute.write(f"{datetime.now()}, {err}, {user} \n")
