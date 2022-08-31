@@ -10,12 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    {% if current_user.is_authenticated %}
-        <h6 id="message_home">
-            {{ current_user.name }}
-        </h6>
-        <h1>
-            Bem-vindo!
-        </h1>
-    {% endif %}
+    <h1>
+        Bem-vindo!
+    </h1>
 {% endblock %}

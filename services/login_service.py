@@ -31,12 +31,6 @@ class LoginService:
             log(error, self.user)
             return False
 
-    def get_user_name(self):
-        get_user_name = User.query.filter_by(name=self.user).first() or \
-                        User.query.filter_by(email=self.user).first()
-
-        return get_user_name.name
-
 
 def log(err, user):
     with open("database/db.log", "a") as execute:
