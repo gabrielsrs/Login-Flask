@@ -28,7 +28,7 @@ class TwitterOauth:
             'code': self.state_code['code'],
             'grant_type': 'authorization_code',
             'client_id': app.config['CLIENT_ID'],
-            'redirect_uri': 'http://127.0.0.1:5000/login/twitter',
+            'redirect_uri': app.config['REDIRECT_URL'],
             'code_verifier': 'challenge'
         }
         headers = {
