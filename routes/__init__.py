@@ -1,4 +1,5 @@
-from flask import render_template, redirect, url_for, flash, session, Blueprint, request
+from flask import render_template, redirect, url_for, Blueprint, flash, session
+from flask_login import current_user
 
 from controllers.login_controller import login_controller
 from controllers.logout_controller import logout_controller
@@ -11,20 +12,29 @@ handle = Blueprint("route", __name__)
 
 @handle.route("/", methods=["POST", "GET"])
 @handle.route("/login", methods=["POST", "GET"])
-def login():
+@handle.route("/login/<social_type>", methods=["POST", "GET"])
+def login(social_type=None):
     """
         Route of login and validations' users
         :return: Page of login
     """
-    return login_controller()
+    return login_controller(social_type)
 
 
 @handle.route("/home")
 def home():
+    if current_user.is_authenticated:
+        return render_template("home.html")
+
+    return redirect(url_for("route.login"))
+
+
+@handle.route("/social")
+def social():
     if "username" in session:
         flash("message_home", session["username"])
 
-        return render_template("home.html")
+        return render_template("social.html")
     return redirect(url_for("route.login"))
 
 
