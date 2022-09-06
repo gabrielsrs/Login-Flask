@@ -1,7 +1,8 @@
 from requests import request
 from app import app
 
-class Endpoint:
+
+class TwitterEndpoint:
     def __init__(self, token):
         self.token = token
 
@@ -27,14 +28,14 @@ class TwitterOauth:
         payload_token = {
             'code': self.state_code['code'],
             'grant_type': 'authorization_code',
-            'client_id': app.config['CLIENT_ID'],
-            'redirect_uri': app.config['REDIRECT_URL'],
+            'client_id': app.config['TWITTER_CID'],
+            'redirect_uri': app.config['TWITTER_RURL'],
             'code_verifier': 'challenge'
         }
         headers = {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
 
-        user_token = request('POST', url_token, data=payload_token, headers=headers).json()['access_token']
+        user_token = request('POST', url_token, data=payload_token, headers=headers).json()
 
-        return user_token
+        return user_token['access_token']
