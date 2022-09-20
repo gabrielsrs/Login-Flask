@@ -21,3 +21,7 @@ class Config:
     TWITCH_URL = getenv('TWITCH_URL')
     TWITCH_RURL = getenv('TWITCH_RURL')
     TWITCH_CSECRET = getenv('TWITCH_CSECRET')
+    GOOGLE_CID = getenv('GOOGLE_CID')
+    GOOGLE_URL = getenv('GOOGLE_URL')
+    GOOGLE_RURL = getenv('GOOGLE_RURL')
+    GOOGLE_CSECRET = getenv('GOOGLE_CSECRET')

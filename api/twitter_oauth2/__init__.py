@@ -10,23 +10,21 @@ class TwitterEndpoint:
         url_endpoint = 'https://api.twitter.com/2/users/me'
 
         headers = {
-            'authorization': f'Bearer {self.token}'
+            'authorization': f'Bearer {self.token["access_token"]}'
         }
 
-        data_user = request('GET', url_endpoint, headers=headers).json()
-
-        return data_user
+        return request('GET', url_endpoint, headers=headers).json()
 
 
 class TwitterOauth:
-    def __init__(self, state_code):
-        self.state_code = state_code
+    def __init__(self, code):
+        self.code = code
 
     def twitter_oauth(self):
         url_token = 'https://api.twitter.com/2/oauth2/token'
 
         payload_token = {
-            'code': self.state_code['code'],
+            'code': self.code['code'],
             'grant_type': 'authorization_code',
             'client_id': app.config['TWITTER_CID'],
             'redirect_uri': app.config['TWITTER_RURL'],
@@ -36,6 +34,4 @@ class TwitterOauth:
             'Content-Type': 'application/x-www-form-urlencoded'
         }
 
-        user_token = request('POST', url_token, data=payload_token, headers=headers).json()
-
-        return user_token['access_token']
+        return request('POST', url_token, data=payload_token, headers=headers).json()
