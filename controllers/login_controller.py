@@ -2,6 +2,8 @@ from flask import render_template, request, redirect, url_for, flash, session
 from flask_login import login_user, current_user
 from api.twitter_oauth2 import TwitterEndpoint, TwitterOauth
 from api.twitch_oauth2 import TwitchLogin, TwitchEndpoint
+from api.google_oauth2 import GoogleOauth, GoogleEndpoint
+
 
 from datetime import timedelta
 from app import app
@@ -46,6 +48,14 @@ def login_controller(social_type):
             user = TwitchEndpoint(token).user_name()
 
             session['username'] = user['data'][0]['display_name']
+
+            return redirect(url_for("route.social"))
+
+        elif social_type == 'google':
+            token = GoogleOauth(request.args).token()
+            user = GoogleEndpoint(token).user_name()
+
+            session['username'] = user['name']
 
             return redirect(url_for("route.social"))
 
