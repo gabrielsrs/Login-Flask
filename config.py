@@ -25,3 +25,8 @@ class Config:
     GOOGLE_URL = getenv('GOOGLE_URL')
     GOOGLE_RURL = getenv('GOOGLE_RURL')
     GOOGLE_CSECRET = getenv('GOOGLE_CSECRET')
+    FACEBOOK_CID = getenv('FACEBOOK_CID')
+    FACEBOOK_URL = getenv('FACEBOOK_URL')
+    FACEBOOK_RURL = getenv('FACEBOOK_RURL')
+    FACEBOOK_CSECRET = getenv('FACEBOOK_CSECRET')
+

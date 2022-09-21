@@ -3,6 +3,7 @@ from flask_login import login_user, current_user
 from api.twitter_oauth2 import TwitterEndpoint, TwitterOauth
 from api.twitch_oauth2 import TwitchLogin, TwitchEndpoint
 from api.google_oauth2 import GoogleOauth, GoogleEndpoint
+from api.facebook_oauth2 import FacebookOauth, FacebookEndpoint
 
 
 from datetime import timedelta
@@ -54,6 +55,14 @@ def login_controller(social_type):
         elif social_type == 'google':
             token = GoogleOauth(request.args).token()
             user = GoogleEndpoint(token).user_name()
+
+            session['username'] = user['name']
+
+            return redirect(url_for("route.social"))
+
+        elif social_type == 'facebook':
+            token = FacebookOauth(request.args).token()
+            user = FacebookEndpoint(token).user_name()
 
             session['username'] = user['name']
 
