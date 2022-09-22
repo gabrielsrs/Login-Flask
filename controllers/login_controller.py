@@ -4,7 +4,7 @@ from api.twitter_oauth2 import TwitterEndpoint, TwitterOauth
 from api.twitch_oauth2 import TwitchLogin, TwitchEndpoint
 from api.google_oauth2 import GoogleOauth, GoogleEndpoint
 from api.facebook_oauth2 import FacebookOauth, FacebookEndpoint
-
+from api.github_oauth2 import GithubOauth, GithubEndpoint
 
 from datetime import timedelta
 from app import app
@@ -65,6 +65,14 @@ def login_controller(social_type):
             user = FacebookEndpoint(token).user_name()
 
             session['username'] = user['name']
+
+            return redirect(url_for("route.social"))
+
+        elif social_type == 'github':
+            token = GithubOauth(request.args).token()
+            user = GithubEndpoint(token).user_name()
+
+            session['username'] = user['login']
 
             return redirect(url_for("route.social"))
 

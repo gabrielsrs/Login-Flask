@@ -29,4 +29,7 @@ class Config:
     FACEBOOK_URL = getenv('FACEBOOK_URL')
     FACEBOOK_RURL = getenv('FACEBOOK_RURL')
     FACEBOOK_CSECRET = getenv('FACEBOOK_CSECRET')
-
+    GITHUB_CID = getenv('GITHUB_CID')
+    GITHUB_URL = getenv('GITHUB_URL')
+    GITHUB_RURL = getenv('GITHUB_RURL')
+    GITHUB_CSECRET = getenv('GITHUB_CSECRET')
