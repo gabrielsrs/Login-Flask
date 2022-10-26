@@ -2,6 +2,10 @@
 
 {% block title %}Register{% endblock %}
 
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/register.css') }}" media="screen" />
+{% endblock %}
+
 {% block content %}
     <h1>Cadastro</h1>
 
