@@ -2,6 +2,10 @@
 
 {% block title %}Home{% endblock %}
 
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/social.css') }}" media="screen" />
+{% endblock %}
+
 {% block header %}
     <nav aria-hidden="false">
         <a href="/home" class="logo">Home</a>

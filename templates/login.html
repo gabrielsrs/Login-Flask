@@ -2,6 +2,10 @@
 
 {% block title %}Login{% endblock %}
 
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/login.css') }}" media="screen" />
+{% endblock %}
+
 {% block content %}
     <h1>Entrar</h1>
 
@@ -12,7 +16,10 @@
     <input type="submit" name="submit" value="Acessar">
 
     <div id="base_box_login">
-        <label><input type="checkbox" name="remember" value="remember"><span>Lembre-me</span></label>
+        <label class="remember">
+            <input type="checkbox" name="remember" value="remember">
+            <span>Lembre-me</span>
+        </label>
         <a href="/register">Cadastre-se</a>
     </div>
 
@@ -20,22 +27,37 @@
 
 {% block outside %}
     <div class="social-login">
-        <ul>
-            <li id="twitter-login">
-                <a href="{{ TWITTER_URL }}">Twitter</a>
+        <ul class="social-content">
+            <li id="twitter-login" class="item">
+                <a href="{{ TWITTER_URL }}">
+                    <i class="fa-brands fa-twitter fa-2x"></i>
+                </a>
             </li>
-            <li id="twitch-login">
-                <a href="{{ TWITCH_URL }}">Twitch</a>
+            <li id="twitch-login" class="item">
+                <a href="{{ TWITCH_URL }}">
+                    <i class="fa-brands fa-twitch fa-2x"></i>
+                </a>
             </li>
-            <li id="google-login">
-                <a href="{{ GOOGLE_URL }}">Google</a>
+            <li id="google-login" class="item">
+                <a href="{{ GOOGLE_URL }}">
+                    <i class="fa-brands fa-google fa-2x"></i>
+                </a>
             </li>
-            <li id="facebook-login">
-                <a href="{{ FACEBOOK_URL }}">Facebook</a>
+            <li id="facebook-login" class="item">
+                <a href="{{ FACEBOOK_URL }}">
+                    <i class="fa-brands fa-facebook fa-2x"></i>
+                </a>
             </li>
-            <li id="github-login">
-                <a href="{{ GITHUB_URL }}">Github</a>
+            <li id="github-login" class="item">
+                <a href="{{ GITHUB_URL }}">
+                    <i class="fa-brands fa-github fa-2x"></i>
+                </a>
             </li>
         </ul>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js" integrity="sha512-8pHNiqTlsrRjVD4A/3va++W1sMbUHwWxxRPWNyVlql3T+Hgfd81Qc6FC5WMXDC+tSauxxzp1tgiAvSKFu1qIlA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/login.js') }}"></script>
 {% endblock %}

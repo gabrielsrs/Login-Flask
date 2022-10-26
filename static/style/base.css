@@ -1,19 +1,35 @@
-body {
+*,
+*:after,
+*:before {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+
+    text-decoration: none;
+    box-shadow:border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
     background: #34495e;
+    overflow-x: hidden;
 }
 
 .box {
-    width: 320px;
-    padding: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #191919;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+.form-content {
     display: inline-grid;
+    background: #191919;
+    padding: 40px;
+    width: 320px;
 }
 
 .box h1 {
@@ -87,58 +103,3 @@ body {
     font-size: 15px;
 }
 
-/*Login*/
-
-#base_box_login {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    color: white;
-}
-
-/*Register*/
-#base_box_register {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-}
-
-/*Home*/
-nav {
-    line-height: 35px;
-    margin: 0;
-    background-color: #19191985;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav a {
-    width: 50px;
-    border: 0;
-    background: none;
-    display: block;
-    text-align: center;
-    padding: 0 20px;
-    margin: 10px;
-    border: 2px solid #3498db;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-nav a:hover {
-    border-color: #2ecc71;
-}
-
-#message_home {
-    margin: 0;
-    display: block;
-    text-align: center;
-    color: white;
-    font-size: 2em;
-    font-weight: 200;
-}

@@ -1,0 +1,63 @@
+#base_box_login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: white;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+.remember input {
+    margin-right: 3px;
+}
+
+.social-login {
+    width: 50px;
+    height: 250px;
+    margin: -25px;
+    background-image: linear-gradient(#fff0, #ffffff2e, #fff0);
+    display: flex;
+    overflow-y: auto;
+    position: relative;
+}
+
+.social-login::-webkit-scrollbar {
+ display: none;
+}
+
+.social-content {
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    will-change: transform;
+}
+
+.item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+}
+
+.item:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    font-size: 17px;
+}
+
+.item a {
+    color: #ffffff9c;
+}
