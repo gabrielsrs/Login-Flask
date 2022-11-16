@@ -95,7 +95,7 @@ body{
 /*Message alert error*/
 
 #message_alert {
-    margin: 0;
+    margin-bottom: 10px;
     display: block;
     text-align: center;
     color: white;
