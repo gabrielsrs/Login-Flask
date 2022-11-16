@@ -1,15 +1,11 @@
 from flask import render_template, request, redirect, url_for, flash, session
 from flask_login import login_user, current_user
-from api.twitter_oauth2 import TwitterEndpoint, TwitterOauth
-from api.twitch_oauth2 import TwitchLogin, TwitchEndpoint
-from api.google_oauth2 import GoogleOauth, GoogleEndpoint
-from api.facebook_oauth2 import FacebookOauth, FacebookEndpoint
-from api.github_oauth2 import GithubOauth, GithubEndpoint
 
 from datetime import timedelta
 from app import app
 
 from services.login_service import LoginService
+from services.oauth2_options import Options
 from database.db import User
 
 
@@ -36,43 +32,11 @@ def login_controller(social_type):
             return redirect(url_for("route.login"))
 
     else:
-        if social_type == 'twitter':
-            token = TwitterOauth(request.args).twitter_oauth()
-            user = TwitterEndpoint(token).info_user()
+        if social_type:
+            third_party = Options(social_type=social_type, code=request.args)
+            result = third_party.social()
 
-            session['username'] = user['data']['name']
-
-            return redirect(url_for("route.social"))
-
-        elif social_type == 'twitch':
-            token = TwitchLogin(request.args).token()
-            user = TwitchEndpoint(token).user_name()
-
-            session['username'] = user['data'][0]['display_name']
-
-            return redirect(url_for("route.social"))
-
-        elif social_type == 'google':
-            token = GoogleOauth(request.args).token()
-            user = GoogleEndpoint(token).user_name()
-
-            session['username'] = user['name']
-
-            return redirect(url_for("route.social"))
-
-        elif social_type == 'facebook':
-            token = FacebookOauth(request.args).token()
-            user = FacebookEndpoint(token).user_name()
-
-            session['username'] = user['name']
-
-            return redirect(url_for("route.social"))
-
-        elif social_type == 'github':
-            token = GithubOauth(request.args).token()
-            user = GithubEndpoint(token).user_name()
-
-            session['username'] = user['login']
+            session['username'] = result
 
             return redirect(url_for("route.social"))
 
