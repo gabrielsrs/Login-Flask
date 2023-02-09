@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from os import getenv, path
 
-load_dotenv(path.realpath('.env'))
+load_dotenv(path.realpath('instance/.env'))
 
 
 class Config:

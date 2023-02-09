@@ -20,12 +20,13 @@ class LoginService:
         try:
             user_validation = User.query.filter_by(name=self.user).first() or \
                               User.query.filter_by(email=self.user).first()
-            # False(have user) True(don't have user)
+            # query return None if don't find a user
 
-            if user_validation is not None:
-                password_db = User.query.filter_by(name=self.user).first().password
+            if user_validation:
+                return True if check_match(self.password, user_validation.password) else False
 
-                return True if check_match(self.password, password_db) else False
+            else:
+                log("User/E-mail not found", self.user)
 
         except Exception as error:
             log(error, self.user)
@@ -33,5 +34,5 @@ class LoginService:
 
 
 def log(err, user):
-    with open("database/db.log", "a") as execute:
+    with open("instance/database/db.log", "a") as execute:
         execute.write(f"{datetime.now()}, {err}, {user} \n")

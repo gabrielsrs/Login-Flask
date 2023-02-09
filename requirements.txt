@@ -1,5 +1,6 @@
-Flask_Login==0.5.0
-Flask==2.0.1
-flask_sqlalchemy==2.5.1
-python-dotenv==0.20.0
-py-bcrypt==0.4
+Flask_Login==0.6.2
+Flask==2.2.2
+flask_sqlalchemy==3.0.3
+python-dotenv==0.21.1
+bcrypt==4.0.1
+requests=2.28.2

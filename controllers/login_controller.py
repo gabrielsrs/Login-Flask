@@ -17,7 +17,8 @@ def login_controller(social_type):
         data_users = LoginService(user, password)
 
         if data_users.login():
-            user_object = User.query.filter_by(name=user).first()
+            user_object = User.query.filter_by(name=user).first() or \
+                          User.query.filter_by(email=user).first()
             remember = request.form.get('remember') == "remember"
 
             login_user(user=user_object,
