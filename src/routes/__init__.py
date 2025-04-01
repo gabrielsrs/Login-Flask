@@ -1,11 +1,11 @@
 from flask import render_template, redirect, url_for, Blueprint, flash, session
 from flask_login import current_user
 
-from controllers.login_controller import login_controller
-from controllers.logout_controller import logout_controller
-from controllers.register_controller import register_controller
+from src.controllers.login_controller import login_controller
+from src.controllers.logout_controller import logout_controller
+from src.controllers.register_controller import register_controller
 
-import error
+from src import error
 
 handle = Blueprint("route", __name__)
 

@@ -1,6 +1,6 @@
-from database.db import User
+from src.database.db import User
 from datetime import datetime
-from services.pass_code import check_match
+from src.services.pass_code import check_match
 
 
 class LoginService:
