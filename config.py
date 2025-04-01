@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 from os import getenv, path
+from ast import literal_eval
 
 load_dotenv(path.realpath('instance/.env'))
 
@@ -7,10 +8,10 @@ load_dotenv(path.realpath('instance/.env'))
 class Config:
     """Load variables"""
     TESTING = getenv('TESTING')
-    FLASK_DEBUG = getenv('FLASK_DEBUG')
+    FLASK_DEBUG = literal_eval(getenv('FLASK_DEBUG'))
     SECRET_KEY = getenv('SECRET_KEY')
     SERVER = getenv('SERVER')
-    PORT = getenv('PORT')
+    PORT = literal_eval(getenv('PORT'))
     DAYS = getenv('DAYS')
     SQLALCHEMY_DATABASE_URI = getenv("SQLALCHEMY_DATABASE_URI")
     SQLALCHEMY_TRACK_MODIFICATIONS = getenv("SQLALCHEMY_TRACK_MODIFICATIONS")
