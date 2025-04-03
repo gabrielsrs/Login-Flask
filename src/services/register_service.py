@@ -1,6 +1,6 @@
-from database.db import User
-from app import db
-from services.pass_code import encrypt
+from src.database.db import User
+from src.app import db
+from src.services.pass_code import encrypt
 
 
 class RegisterService:

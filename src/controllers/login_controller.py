@@ -2,11 +2,11 @@ from flask import render_template, request, redirect, url_for, flash, session
 from flask_login import login_user, current_user
 
 from datetime import timedelta
-from app import app
+from src.app import app
 
-from services.login_service import LoginService
-from services.oauth2_options import Options
-from database.db import User
+from src.services.login_service import LoginService
+from src.services.oauth2_options import Options
+from src.database.db import User
 
 
 def login_controller(social_type):
@@ -17,7 +17,8 @@ def login_controller(social_type):
         data_users = LoginService(user, password)
 
         if data_users.login():
-            user_object = User.query.filter_by(name=user).first()
+            user_object = User.query.filter_by(name=user).first() or \
+                          User.query.filter_by(email=user).first()
             remember = request.form.get('remember') == "remember"
 
             login_user(user=user_object,

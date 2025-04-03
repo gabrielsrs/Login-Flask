@@ -1,5 +1,5 @@
 from flask import request, redirect, flash, url_for, render_template
-from services.register_service import RegisterService
+from src.services.register_service import RegisterService
 
 
 def register_controller():

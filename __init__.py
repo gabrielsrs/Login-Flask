@@ -1,15 +1,9 @@
-from app import app
-
-
-with app.app_context():
-    from routes import handle
-
-    app.register_blueprint(handle)
-
+from src.app import app
+from config import Config
 
 if __name__ == '__main__':
     app.run(
-        debug=eval(app.config["FLASK_DEBUG"]),
-        host=str(app.config["SERVER"]),
-        port=app.config["PORT"],
+        debug=Config.FLASK_DEBUG,
+        host=Config.SERVER,
+        port=Config.PORT,
     )

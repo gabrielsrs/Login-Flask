@@ -8,7 +8,7 @@ def check_match(password, hash_password):
     :return: True if it matches or false otherwise.
 
     """
-    match_password = checkpw(password.encode('utf8'), hash_password.encode('utf8'))
+    match_password = checkpw(password.encode('utf8'), hash_password)
     return match_password
 
 

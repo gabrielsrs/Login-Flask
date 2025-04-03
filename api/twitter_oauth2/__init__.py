@@ -1,5 +1,5 @@
 from requests import request
-from app import app
+from src.app import app
 
 
 class TwitterEndpoint:
