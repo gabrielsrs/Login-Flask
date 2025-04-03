@@ -5,8 +5,6 @@ from src.controllers.login_controller import login_controller
 from src.controllers.logout_controller import logout_controller
 from src.controllers.register_controller import register_controller
 
-from src import error
-
 handle = Blueprint("route", __name__)
 
 
@@ -42,14 +40,6 @@ def social():
 def logout():
 
     return logout_controller()
-
-
-@handle.route("/error")
-def error():
-    """
-    :return: Page error
-    """
-    return error()
 
 
 @handle.route("/register", methods=["POST", "GET"])
